@@ -7,12 +7,22 @@ const Header = () => {
       <a href="#" className="logo">
         <img src="img/logo.png" alt="Logo" className="logo-img" />
       </a>
-      <ul className="header-menu">
-        <li className="header-list-item active">Home</li>
-        <li className="header-list-item">Client Registration</li>
-        <li className="header-list-item">Advisors</li>
-        <li className="header-list-item">Register as an Advisor</li>
-      </ul>
+      <nav className="nav-menu">
+        <ul className="header-menu">
+          <li className="header-list-item active">
+            <a href="#home">Home</a>
+          </li>
+          <li className="header-list-item">
+            <a href="#client-registration">Client Registration</a>
+          </li>
+          <li className="header-list-item">
+            <a href="#advisors">Advisors</a>
+          </li>
+          <li className="header-list-item">
+            <a href="#register-advisor">Register as an Advisor</a>
+          </li>
+        </ul>
+      </nav>
     </header>
   );
 };

@@ -1,0 +1,11 @@
+.hero {
+  width: 100%;
+  min-height: 830px;
+  background: url('/public/img/background-image.jpg') no-repeat center / cover;
+  object-fit: cover;
+}
+
+.hero-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}

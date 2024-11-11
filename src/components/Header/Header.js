@@ -3,14 +3,25 @@ import "./Header.css";
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState("home");
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleItemClick = (itemName) => {
     setActiveItem(itemName);
+
+    if (itemName === "client-registration") {
+      setIsModalOpen(true);
+      document.body.classList.add("no-scroll");
+    }
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.classList.remove("no-scroll");
   };
 
   return (
     <header className="header">
-      <a href="#" className="logo">
+      <a href="#home" className="logo">
         <img src="img/logo.png" alt="Logo" className="logo-img" />
       </a>
       <nav className="nav-menu">
@@ -49,6 +60,30 @@ const Header = () => {
           </li>
         </ul>
       </nav>
+
+      {/* Модальное окно */}
+
+      {isModalOpen && (
+        <div className="modal-overlay" onClick={closeModal}>
+          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="close-button" onClick={closeModal}>
+              ×
+            </button>
+            <h2>Client Registration</h2>
+            <form className="registration-form">
+              <label>
+                Name:
+                <input type="text" name="name" required />
+              </label>
+              <label>
+                Email:
+                <input type="email" name="email" required />
+              </label>
+              <button type="submit">Register</button>
+            </form>
+          </div>
+        </div>
+      )}
     </header>
   );
 };

@@ -47,10 +47,13 @@ const Footer = () => {
               />
             </a>
 
-            <a href="#" className="footer-right-link">
+            <a
+              href="https://github.com/Mokkento12"
+              className="footer-right-link"
+            >
               <img src="img/github.svg" alt="" className="footer-right-image" />
             </a>
-            <a href="#" className="footer-right-link">
+            <a href="https://ru.pinterest.com/" className="footer-right-link">
               <img
                 src="img/pinterest.svg"
                 alt=""

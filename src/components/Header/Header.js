@@ -1,22 +1,14 @@
 import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
   const [activeItem, setActiveItem] = useState("home");
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const navigate = useNavigate();
 
-  const handleItemClick = (itemName) => {
+  const handleItemClick = (itemName, path) => {
     setActiveItem(itemName);
-
-    if (itemName === "client-registration") {
-      setIsModalOpen(true);
-      document.body.classList.add("no-scroll");
-    }
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-    document.body.classList.remove("no-scroll");
+    navigate(path);
   };
 
   return (
@@ -30,23 +22,25 @@ const Header = () => {
             className={`header-list-item ${
               activeItem === "home" ? "active" : ""
             }`}
-            onClick={() => handleItemClick("home")}
+            onClick={() => handleItemClick("home", "/")}
           >
-            <a href="#home">Home</a>
+            <Link to="/">Home</Link>
           </li>
           <li
             className={`header-list-item ${
               activeItem === "client-registration" ? "active" : ""
             }`}
-            onClick={() => handleItemClick("client-registration")}
+            onClick={() =>
+              handleItemClick("client-registration", "/client-registration")
+            }
           >
-            <a href="#client-registration">Client Registration</a>
+            <Link to="/client-registration">Client Registration</Link>
           </li>
           <li
             className={`header-list-item ${
               activeItem === "advisors" ? "active" : ""
             }`}
-            onClick={() => handleItemClick("advisors")}
+            onClick={() => handleItemClick("advisors", "#advisors")}
           >
             <a href="#advisors">Advisors</a>
           </li>
@@ -54,36 +48,14 @@ const Header = () => {
             className={`header-list-item ${
               activeItem === "register-advisor" ? "active" : ""
             }`}
-            onClick={() => handleItemClick("register-advisor")}
+            onClick={() =>
+              handleItemClick("register-advisor", "#register-advisor")
+            }
           >
             <a href="#register-advisor">Register as an Advisor</a>
           </li>
         </ul>
       </nav>
-
-      {/* Модальное окно */}
-
-      {isModalOpen && (
-        <div className="modal-overlay" onClick={closeModal}>
-          <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-            <button className="close-button" onClick={closeModal}>
-              ×
-            </button>
-            <h2>Client Registration</h2>
-            <form className="registration-form">
-              <label>
-                Name:
-                <input type="text" name="name" required />
-              </label>
-              <label>
-                Email:
-                <input type="email" name="email" required />
-              </label>
-              <button type="submit">Register</button>
-            </form>
-          </div>
-        </div>
-      )}
     </header>
   );
 };

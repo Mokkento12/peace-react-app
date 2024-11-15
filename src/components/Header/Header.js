@@ -1,13 +1,12 @@
-import React, { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import React from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Header.css";
 
 const Header = () => {
-  const [activeItem, setActiveItem] = useState("home");
+  const location = useLocation();
   const navigate = useNavigate();
 
-  const handleItemClick = (itemName, path) => {
-    setActiveItem(itemName);
+  const handleItemClick = (path) => {
     navigate(path);
   };
 
@@ -20,37 +19,33 @@ const Header = () => {
         <ul className="header-menu">
           <li
             className={`header-list-item ${
-              activeItem === "home" ? "active" : ""
+              location.pathname === "/" ? "active" : ""
             }`}
-            onClick={() => handleItemClick("home", "/")}
+            onClick={() => handleItemClick("/")}
           >
             <Link to="/">Home</Link>
           </li>
           <li
             className={`header-list-item ${
-              activeItem === "client-registration" ? "active" : ""
+              location.pathname === "/client-registration" ? "active" : ""
             }`}
-            onClick={() =>
-              handleItemClick("client-registration", "/client-registration")
-            }
+            onClick={() => handleItemClick("/client-registration")}
           >
             <Link to="/client-registration">Client Registration</Link>
           </li>
           <li
             className={`header-list-item ${
-              activeItem === "advisors" ? "active" : ""
+              location.hash === "#advisors" ? "active" : ""
             }`}
-            onClick={() => handleItemClick("advisors", "#advisors")}
+            onClick={() => handleItemClick("#advisors")}
           >
             <a href="#advisors">Advisors</a>
           </li>
           <li
             className={`header-list-item ${
-              activeItem === "register-advisor" ? "active" : ""
+              location.hash === "#register-advisor" ? "active" : ""
             }`}
-            onClick={() =>
-              handleItemClick("register-advisor", "#register-advisor")
-            }
+            onClick={() => handleItemClick("#register-advisor")}
           >
             <a href="#register-advisor">Register as an Advisor</a>
           </li>

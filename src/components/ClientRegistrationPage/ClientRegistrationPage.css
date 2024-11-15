@@ -1,58 +1,24 @@
-.modal-overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
+.client-registration-page {
   width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 1000;
-}
-
-.modal-content {
-  background-color: #fff;
-  padding: 20px;
-  width: 400px;
-  border-radius: 8px;
-  position: relative;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 24px;
-  background: none;
-  border: none;
-  cursor: pointer;
-}
-
-.registration-form {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  object-fit: cover;
+  background: url('/public/img/client-info-img.jpg') no-repeat center / cover;
 }
 
-.registration-form label {
-  margin-bottom: 10px;
+.registration-section-container {
+  width: 1400px;
+  margin: 0 auto;
 }
 
-.registration-form input {
-  padding: 8px;
-  margin-top: 4px;
+footer {
+  margin-top: auto;
 }
 
-.registration-form button {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #09B3B0;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-.no-scroll {
-  overflow: hidden;
+@media (max-width: 1440px) {
+  .registration-section-container {
+    width: 100%;
+    padding: 0 20px;
+  }
 }

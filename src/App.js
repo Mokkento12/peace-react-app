@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
 import Hero from "./components/Hero/Hero";
 import ClientRegistrationPage from "./components/ClientRegistrationPage/ClientRegistrationPage";
+import AdvisorsPage from "./components/AdvisorsPage/AdvisorsPage";
 import Promo from "./components/Promo/Promo";
 import Oracle from "./components/Oracle/Oracle";
 import Faq from "./components/Faq/Faq";
@@ -29,6 +30,7 @@ function App() {
             path="/client-registration"
             element={<ClientRegistrationPage />}
           />
+          <Route path="/advisors" element={<AdvisorsPage />} />
         </Routes>
       </div>
     </Router>

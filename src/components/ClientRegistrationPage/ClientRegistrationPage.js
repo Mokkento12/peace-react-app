@@ -6,8 +6,8 @@ import "./ClientRegistrationPage.css";
 const ClientRegistrationPage = () => {
   return (
     <div className="client-registration-page">
+      <Header />
       <div className="registration-section-container">
-        <Header />
         <div className="form-container">
           <form className="registration-form">
             <h2 className="form-title">Client Registration</h2>
@@ -33,6 +33,7 @@ const ClientRegistrationPage = () => {
               <label htmlFor="password">Password</label>
               <input
                 type="password"
+                autocomplete="current-password"
                 id="password"
                 placeholder="Enter your password"
                 required

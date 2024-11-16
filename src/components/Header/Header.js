@@ -30,9 +30,9 @@ const Header = () => {
             </Link>
           </li>
           <li className="header-list-item">
-            <a href="#advisors" onClick={() => handleItemClick("#advisors")}>
+            <Link to="/advisors" onClick={() => handleItemClick("/advisors")}>
               Advisors
-            </a>
+            </Link>
           </li>
           <li className="header-list-item">
             <a

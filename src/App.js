@@ -4,6 +4,8 @@ import "./App.css";
 import Hero from "./components/Hero/Hero";
 import ClientRegistrationPage from "./components/ClientRegistrationPage/ClientRegistrationPage";
 import AdvisorsPage from "./components/AdvisorsPage/AdvisorsPage";
+import RegisterAdvisorPage from "./components/RegisterAdvisorPage/RegisterAdvisorPage";
+
 import Promo from "./components/Promo/Promo";
 import Oracle from "./components/Oracle/Oracle";
 import Faq from "./components/Faq/Faq";
@@ -31,6 +33,7 @@ function App() {
             element={<ClientRegistrationPage />}
           />
           <Route path="/advisors" element={<AdvisorsPage />} />
+          <Route path="/register-advisor" element={<RegisterAdvisorPage />} />
         </Routes>
       </div>
     </Router>

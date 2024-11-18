@@ -35,12 +35,7 @@ const Header = () => {
             </Link>
           </li>
           <li className="header-list-item">
-            <a
-              href="#register-advisor"
-              onClick={() => handleItemClick("#register-advisor")}
-            >
-              Register as an Advisor
-            </a>
+            <Link to="/register-advisor">Register as an Advisor</Link>
           </li>
         </ul>
       </nav>
